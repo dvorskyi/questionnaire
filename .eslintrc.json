@@ -1,3 +1,72 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+    "func-call-spacing": "off",
+    "no-useless-escape": "warn",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "semi": "warn",
+    "no-duplicate-imports": "warn",
+    "no-shadow": "off",
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+
+    // Import Sort
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          // Side effect + ext library imports
+          ["^\\w", "^\\u0000"],
+          ["^"],
+          ["^@", "^public/*"],
+          ["^@/components"],
+          ["^@/constants"],
+          ["^@/elements"],
+          ["^@/helpers"],
+          ["^@/hooks"],
+          ["^@/store"],
+          ["^@/layouts"],
+          ["^@types"],
+          ["^@/assets", "\\.scss$"]
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }

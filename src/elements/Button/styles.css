@@ -1,0 +1,28 @@
+.button {
+  border-radius: 16px;
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  min-width: 330px;
+  max-width: 330px;
+
+  &.default {
+    color: black;
+    background: #eaeef7;
+  }
+
+  &.active {
+    color: white;
+    background: linear-gradient(
+      165.54deg,
+      #141333 -33.39%,
+      #202261 15.89%,
+      #543c97 55.84%,
+      #6939a2 74.96%
+    );
+  }
+
+  &:hover {
+    background: lightgray;
+  }
+}

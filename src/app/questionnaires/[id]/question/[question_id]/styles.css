@@ -1,0 +1,13 @@
+.question-container {
+  max-width: 330px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .answers {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
