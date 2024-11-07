@@ -12,7 +12,7 @@ export const useBackNavigation = () => {
     }
   };
 
-  const canGoBack = pathname !== "/questionnaires";
+  const canGoBack = pathname !== "/questionnaires" && pathname !== "/";
 
   return { goBack, canGoBack };
 };
